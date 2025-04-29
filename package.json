@@ -14,5 +14,19 @@
 		"sharp": "^0.34.1",
 		"tinyurl": "^1.1.7",
 		"twitter-api-v2": "^1.22.0"
-	}
+	},
+	"description": "",
+	"devDependencies": {},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/FernaandoJr/astrovista-twitter-bot.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"type": "commonjs",
+	"bugs": {
+		"url": "https://github.com/FernaandoJr/astrovista-twitter-bot/issues"
+	},
+	"homepage": "https://github.com/FernaandoJr/astrovista-twitter-bot#readme"
 }
