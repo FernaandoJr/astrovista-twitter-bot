@@ -42,7 +42,6 @@ async function tweetRandomApod() {
 			logMessage(`APOD is not an image. Trying again...`, "INFO")
 			continue
 		}
-		console.log("APOD:", JSON.stringify(apod))
 		logMessage(`APOD: ${JSON.stringify(apod)}`, "INFO")
 		break
 	}

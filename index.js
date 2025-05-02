@@ -5,7 +5,7 @@ const { tweetRandomApod } = require("./utils/tweetRandomApod")
 require("dotenv").config()
 
 // Cron job to post a random APOD every hour - 0 * * * *
-cron.schedule("0 * * * *", async () => {
+cron.schedule("0 */2 * * *", async () => {
 	logMessage("Starting random APOD post...", "INFO")
 	try {
 		await tweetRandomApod()

@@ -18,7 +18,8 @@ async function postTweet(imagePath, caption) {
 		})
 		console.log("Tweet postado com sucesso:", response)
 	} catch (error) {
-		console.error("Erro ao postar tweet:", error)
+		// console.error("Erro ao postar tweet:", error)
+		throw new Error(JSON.stringify(error.data))
 	}
 }
 

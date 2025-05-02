@@ -4,11 +4,13 @@ const { markDateAsPosted } = require("../services/mongo")
 const { logMessage } = require("./logMessage")
 const { postTweet } = require("../twitter")
 const TinyURL = require("tinyurl")
+const { deleteImages } = require("./deleteImages")
 
 async function tweetApod(apod) {
 	logMessage(`Posting APOD...`, "INFO")
 	const imageUrl = apod.hdurl || apod.url
 	const filename = `${apod.date}.jpg`
+
 	const imagePath = await downloadImage(imageUrl, filename)
 
 	// Format the date to include the month name, treating it as a local date
@@ -44,12 +46,28 @@ async function tweetApod(apod) {
 	}
 	caption += `\nFull description at: ${shortUrl}\n`
 
-	await postTweet(imagePath, caption)
-	logMessage(`Image posted successfully!`, "SUCCESS")
-	logMessage(`Caption: ${caption}`, "INFO")
+	try {
+		await postTweet(imagePath, caption)
+		logMessage(`Image posted successfully!`, "SUCCESS")
 
-	markDateAsPosted(apod.date)
-	logMessage(`Date marked as posted: ${apod.date}`, "SUCCESS")
+		// Mark the date as posted in the database
+		try {
+			await markDateAsPosted(apod.date)
+			logMessage(`Date ${apod.date} marked as posted.`, "SUCCESS")
+		} catch (error) {
+			logMessage(
+				`Error marking date as posted: ${error.message}`,
+				"ERROR"
+			)
+		}
+	} catch (error) {
+		logMessage(`Error posting tweet: ${error}`, "ERROR")
+		return
+	}
+
+	deleteImages()
+
+	deleteImages()
 }
 
 module.exports = { tweetApod }
