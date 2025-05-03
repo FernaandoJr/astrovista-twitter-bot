@@ -1,6 +1,5 @@
 ![Cover](https://github.com/user-attachments/assets/760961ec-3c43-42ce-b80c-5a21946be6b6)
 
-![GitHub License](https://img.shields.io/github/license/fernaandojr/astrovista?style=flat&link=https%3A%2F%2Fgithub.com%2FFernaandoJr%2FAstroVista%2Fblob%2Fmain%2FLICENSE&label=License)
 ![GitHub deployments](https://img.shields.io/github/deployments/fernaandojr/astrovista-twitter-bot/production?label=Deploy%20Status)
 
 ---
