@@ -34,7 +34,10 @@ async function downloadImage(url, filename) {
 	let fileSizeInBytes = fileStats.size
 	let fileSizeInMB = (fileSizeInBytes / 1048 / 1048).toFixed(2)
 
-	console.log(`File size: ${fileSizeInBytes} bytes (${fileSizeInMB} MB)`)
+	logMessage(
+		`File size: ${fileSizeInBytes} bytes (${fileSizeInMB} MB)`,
+		"INFO"
+	)
 
 	logMessage(`Downloaded image size: ${fileSizeInMB} MB`, "INFO")
 

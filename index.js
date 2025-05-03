@@ -17,7 +17,7 @@ cron.schedule("0 */2 * * *", async () => {
 // Cron job to run the main bot daily at 11 AM - 0 11 * * *
 cron.schedule("0 11 * * *", async () => {
 	await tweetLatestApod()
-	console.log("APOD postado com sucesso!")
+	logMessage("Latest APOD posted successfully.", "SUCCESS")
 })
 
 // tweetLatestApod()

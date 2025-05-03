@@ -1,5 +1,6 @@
 require("dotenv").config()
 const { TwitterApi } = require("twitter-api-v2")
+const { logMessage } = require("../utils/logMessage")
 
 // Substitua com suas chaves do app
 const client = new TwitterApi({
@@ -16,7 +17,7 @@ async function postTweet(imagePath, caption) {
 			text: caption,
 			media: { media_ids: [mediaId] },
 		})
-		console.log("Tweet postado com sucesso:", response)
+		logMessage(`Tweet postado com sucesso: ${response.data.id}`, "SUCCESS")
 	} catch (error) {
 		// console.error("Erro ao postar tweet:", error)
 		throw new Error(JSON.stringify(error.data))
