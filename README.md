@@ -1,8 +1,11 @@
 ![Cover](https://github.com/user-attachments/assets/760961ec-3c43-42ce-b80c-5a21946be6b6)
 
-# ![GitHub License](https://img.shields.io/github/license/fernaandojr/astrovista?style=flat&link=https%3A%2F%2Fgithub.com%2FFernaandoJr%2FAstroVista%2Fblob%2Fmain%2FLICENSE&label=License)
+![GitHub License](https://img.shields.io/github/license/fernaandojr/astrovista?style=flat&link=https%3A%2F%2Fgithub.com%2FFernaandoJr%2FAstroVista%2Fblob%2Fmain%2FLICENSE&label=License)
+![GitHub deployments](https://img.shields.io/github/deployments/fernaandojr/astrovista-twitter-bot/production?label=Deploy%20Status)
 
-# Automated Twitter/X Posting Bot
+---
+
+# @astrovistaapp
 
 This project is a **Node.js** bot designed to automate posting on **Twitter/X** by fetching content from a **MongoDB database**. The bot schedules posts at specific intervals, making it ideal for projects that require regular content updates, such as sharing daily images, curated media, or automated text posts.
 
