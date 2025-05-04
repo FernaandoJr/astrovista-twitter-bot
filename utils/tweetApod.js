@@ -64,9 +64,6 @@ async function tweetApod(apod) {
 		logMessage(`Error posting tweet: ${error}`, "ERROR")
 		return
 	}
-
-	deleteImages()
-
 	deleteImages()
 }
 
