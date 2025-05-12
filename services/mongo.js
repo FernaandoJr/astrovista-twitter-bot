@@ -27,6 +27,7 @@ async function getApod(date) {
 
 	const apod = await collection.findOne({ date: date })
 
+	await client.close()
 	return apod
 }
 
@@ -37,6 +38,9 @@ async function isDatePosted(date) {
 	const collection = db.collection("twitter_posted_dates")
 
 	const result = await collection.findOne({ date })
+
+	await client.close()
+
 	return result !== null
 }
 
@@ -47,6 +51,7 @@ async function markDateAsPosted(date) {
 	const collection = db.collection("twitter_posted_dates")
 
 	await collection.insertOne({ date })
+	await client.close()
 }
 
 module.exports = { getApodOfToday, getApod, isDatePosted, markDateAsPosted }
